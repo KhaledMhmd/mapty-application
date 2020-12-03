@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  font-family: "Manrope", sans-serif;
+  color: #ececec;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #333333;
+  width: 500px;
+  padding: 30px 50px 40px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 50px;
+  align-self: center;
+  margin-bottom: 40px;
+}
+.clear {
+  background-color: #333333;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 25px;
+  color: #ececec;
+  font-size: 25px;
+  position: absolute;
+  top: 69px;
+  left: 459px;
+  opacity: 0;
+}
+.workouts {
+  height: 70vh;
+}
+.form {
+  background-color: #555555;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 25px;
+  height: 90px;
+  padding: 15px 27.5px;
+  margin-bottom: 17.5px;
+  border-radius: 5px;
+  transition: all 0.5s, transform 1ms;
+}
+.form.hidden {
+  transform: translateY(-300px);
+  height: 0;
+  padding: 0 22.5px;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+}
+.formLabel {
+  flex: 0 0 50%;
+  font-size: 15px;
+  font-weight: 500;
+}
+.formInput {
+  width: 100%;
+  padding: 3px 11px;
+  font-family: inherit;
+  font-size: 13px;
+  border-radius: 3px;
+  transition: all 0.2s;
+  border: none;
+  background-color: lightgrey;
+}
+.formInput:focus {
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
+.formButton {
+  display: none;
+}
+
+.workout {
+  background-color: #42484d;
+  border-radius: 5px;
+  padding: 15px 22.5px;
+  margin-bottom: 17.5px;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 7.5px 15px;
+}
+
+.workout-running {
+  border-left: 5px solid #00c46a;
+}
+
+.workout-cycling {
+  border-left: 5px solid #ffb545;
+}
+
+.workoutTitle {
+  grid-column: 1 / span 4;
+  font-size: 17px;
+  font-weight: 600;
+}
+.workoutDetails {
+  display: flex;
+  align-items: baseline;
+}
+.workoutIcon {
+  font-size: 18px;
+  margin-right: 2px;
+  height: 2.8px;
+}
+.workoutValue {
+  font-size: 15px;
+  margin-right: 5px;
+}
+.workoutUnit {
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.formRowHidden {
+  display: none;
+}
+/* .hidden {
+  display: none;
+} */
+
+#map {
+  flex: 1;
+  height: 100%;
+  background-color: #aaa;
+}
+
+.copyright {
+  margin-top: auto;
+  font-size: 12px;
+  text-align: center;
+  color: #aaa;
+}
+.footerLink {
+  text-decoration: none;
+  color: #aaa;
+  transition: all 0.2s;
+}
+.footerLink:link,
+.footerLink:visited {
+  color: #aaa;
+  transition: all 0.2s;
+}
+.footerLink:hover,
+.footerLink:active {
+  color: #ececec;
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: #2d3439;
+  color: #ececec;
+  border-radius: 5px;
+  padding-right: 6px;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 15px;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: #2d3439;
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #00c46a;
+}
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #ffb545;
+}

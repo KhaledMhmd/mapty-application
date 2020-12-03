@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mapty // Map Your Workouts</title>
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <button class="clear">☓</button>
+      <ul class="workouts">
+        <form class="form hidden">
+          <div class="formRow">
+            <label class="formLabel">Type</label>
+            <select class="formInput formInputType">
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+          <div class="formRow">
+            <label class="formLabel">Distance</label>
+            <input class="formInput formInputDistance" placeholder="km" />
+          </div>
+          <div class="formRow">
+            <label class="formLabel"> Duration </label>
+            <input class="formInput formInputDuration" placeholder="min" />
+          </div>
+          <div class="formRow">
+            <label class="formLabel"> Cadence </label>
+            <input class="formInput formInputCadence" placeholder="steps/min" />
+          </div>
+          <div class="formRow formRowHidden">
+            <label class="formLabel"> Elev Gain</label>
+            <input class="formInput formInputElevation" placeholder="meters" />
+            <button class="formButton">OK</button>
+          </div>
+        </form>
+        <!-- <li class="workout workout-running">
+          <h2 class="workoutTitle">Running on April 17</h2>
+          <div class="workoutDetails">
+            <span class="workoutIcon">🏃‍</span>
+            <span class="workoutValue">5.2</span>
+            <span class="workoutUnit">km</span>
+          </div>
+          <div class="workoutDetails">
+            <span class="workoutIcon">⏱‍</span>
+            <span class="workoutValue">24</span>
+            <span class="workoutUnit">min</span>
+          </div>
+          <div class="workoutDetails">
+            <span class="workoutIcon">⚡️</span>
+            <span class="workoutValue">4.6</span>
+            <span class="workoutUnit">min/km</span>
+          </div>
+          <div class="workoutDetails">
+            <span class="workoutIcon">👟</span>
+            <span class="workoutValue">178</span>
+            <span class="workoutUnit">spm</span>
+          </div>
+        </li>
+        <li class="workout workout-cycling">
+          <h2 class="workoutTitle">Cycling on April 17</h2>
+          <div class="workoutDetails">
+            <span class="workoutIcon">🚴‍</span>
+            <span class="workoutValue">28</span>
+            <span class="workoutUnit">km</span>
+          </div>
+          <div class="workoutDetails">
+            <span class="workoutIcon">⏱‍</span>
+            <span class="workoutValue">95</span>
+            <span class="workoutUnit">min</span>
+          </div>
+          <div class="workoutDetails">
+            <span class="workoutIcon">⚡️</span>
+            <span class="workoutValue">16</span>
+            <span class="workoutUnit">km/hr</span>
+          </div>
+          <div class="workoutDetails">
+            <span class="workoutIcon">🚵‍</span>
+            <span class="workoutValue">224</span>
+            <span class="workoutUnit">m</span>
+          </div>
+        </li> -->
+      </ul>
+      <p class="copyright">
+        This is a replica that I,
+        <a href="https://github.com/KhaledMhmd" class="footerLink linkToMyPage"
+          >Khaled Mohamed</a
+        >, made of a website created by
+        <a
+          class="footerLink twitterLink"
+          target="_blank"
+          href="https://twitter.com/jonasschmedtman"
+          >Jonas Schmedtmann</a
+        >.
+      </p>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>
